@@ -1,0 +1,164 @@
+:root {
+  --main-bg: #4ABEBD;
+  --main-bg-accent: #2BB3B1;
+  --accent-color: hsl(71, 73%, 54%);
+  --font-color: hsl(218, 22%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Karla', sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.price-card {
+  height: 43rem;
+  width: 56rem;
+  border: 1px solid var(--main-bg);
+  border-radius: 1.2rem;
+  overflow: hidden;
+
+  .top {
+    text-align: left;
+    font-size: 3rem;
+    height: 210px;
+    padding: 3rem;
+
+    .top-title {
+      color: var(--main-bg);
+    }
+
+    .sub-title {
+      color: var(--accent-color);
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      font-weight: 600;
+    }
+
+    .access {
+      color: var(--font-color);
+      font-size: 1.5rem;
+      line-height: 1.5;
+      margin-top: 1.5rem;
+    }
+  }
+
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 220px;
+    overflow-y: hidden;
+
+    .left {
+      background-color: var(--main-bg-accent);
+      padding: 3rem;
+
+      .subscription {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      p {
+        margin-top: 1rem;
+        color: #fff;
+        font-weight: 300;
+
+        span {
+          font-size: 3rem;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+
+      .sm-print {
+        font-size: 1.5rem;
+      }
+
+      .signup-btn {
+        background-color: var(--accent-color);
+        color: #fff;
+        border: none;
+        padding: 1.5rem 2rem;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+        border-radius: .75rem;
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+
+    .right {
+      background-color: var(--main-bg);
+      padding: 3rem;
+
+      .why {
+        margin: 1rem 0rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .options {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        color: #fff;
+      }
+    }
+  }
+}
+
+/* Desktop/Base styles above */
+@media (max-width: 48rem) {
+  .container {
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+
+  .price-card {
+    width: min(100% - 3rem, 35rem);
+    height: auto;
+  }
+
+  .price-card .top,
+  .price-card .bottom {
+    height: auto;
+  }
+
+  .price-card .bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card .top,
+  .price-card .left,
+  .price-card .right {
+    padding: 2.4rem;
+  }
+
+  .price-card .top-title {
+    font-size: 2.6rem;
+  }
+
+  .price-card .access,
+  .price-card .options {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .price-card .signup-btn {
+    width: 100%;
+  }
+}
